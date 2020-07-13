@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Sentiment Prediction</title>
+ <style> 
+        button { 
+            background-image: url( 
+			'https://img.icons8.com/officel/2x/import-csv.png'); 
+            background-size: cover; 
+            width: 50px; 
+            height: 50px; 
+            font-size: 2rem; 
+			display: inline-block;
+			text-align: center;
+			text-decoration: none;
+			cursor: pointer;
+        } 
+</style> 
+</head>
+
+<body>
+
+<h1 align='center'>Upload a .csv or enter a text to predict its Sentiment</h1>
+
+<form action="/predict" method=post enctype=multipart/form-data>
+	<br>
+	<br>
+	<br>
+	<center><input type=file name=file></center>
+	<center><font color = "red",face="verdana", size=3>upload only '.csv' files</font></center>
+	<br>
+	<br>
+	<br>
+	<center><button type=submit value=Upload ></button></center>
+	<br>
+	<br>
+	<br>
+</form>
+<center><font color = "red",face="verdana", size=10>or</font></center>
+<br>
+<br>
+<h2 align='center'>Enter any review to predict the sentiment</h2>
+
+<form action="/predictText" method="POST">
+    <center><input name="text"></center>
+	<br>
+    <center><input type="submit"></center>
+</form>
+	
+	<br>
+	<br>
+	<br>
+	<br>
+	<font size=3>Note:</font>
+	<br>
+	<font color = "blue",face="verdana", size=3>1.Upload only .csv files.</font>
+	<br>
+	<font color = "blue",face="verdana", size=3>2.The uploaded file should have a column named "text" for which the sentiment is to be predicted.</font>
+
+</body>
+</html>

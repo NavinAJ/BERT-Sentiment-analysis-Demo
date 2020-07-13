@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Prediction</title>
+</head>
+
+<body>
+<h1 align='center'>Sentiment Predicted</h1>
+{% if message %}
+<h1 align='center'>
+<font color = "orange",face="verdana", size=6>Click on the download button below after the table to get the prediction for {{message}} file</font></h1>
+{% endif %}
+</a>
+
+{% for table in tables %}
+            {{titles[loop.index]}}
+            {{ table|safe }}
+{% endfor %}
+
+
+<br>
+<br>
+<form action="/download/{{message}}" method=post>
+    <center><button type=submit,value=Upload>Download</button></center>
+</form>
+<br>
+<form action="/refresh" method="post">
+    <center><button class="button">Try another expression</button></center>
+</form>
+
+
+</body>
+</html>

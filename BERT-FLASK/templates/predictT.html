@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Prediction</title>
+</head>
+
+<body>
+<h1 align='center'>BERT Sentiment Analysis</h1>
+{% if message %}
+<h1 align='center'>Review : <font color = "orange",face="verdana", size=6>{{review}}</font></h1>
+<h1 align='center'>The predicted sentiment is : <font color = "orange",face="verdana", size=6>{{message}}</font></h1> 
+{% endif %}
+
+<form action="/refresh" method="post">
+    <center><button class="button">Try another expression</button></center>
+</form>
+
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
+
+</body>
+</html>
